@@ -89,19 +89,19 @@ def trade_manager(TP, SL):
         for i in trade_ID_tracker:
             trade_dict[i] = current_price - long_entry_price
 
-        # if price hits take profit point, close trade and calculate profits
-    if long_entry == True & (current_price - long_entry_price >= TP):
-        current_equity += current_price - long_entry_price * 10000  # for backtesting purposes only
-        long_entry = False
-        close_trade(trade_ID, "long")
-        # send exit signal to mt5
+               # if price hits take profit point, close trade and calculate profits
+           if long_entry == True & (current_price - long_entry_price >= TP):
+               current_equity += current_price - long_entry_price * 10000  # for backtesting purposes only
+               long_entry = False
+               close_trade(trade_ID, "long")
+               # send exit signal to mt5
 
-        # take profit at 5 pips on Short
-    if short_entry == True & (current_price - short_entry_price <= 0 - (TP)):
-        current_equity += 0 - current_price - short_entry_price * 10000  # for backtesting purposes only
-        short_entry = False
-
-        # send exit signal to mt5
+               # take profit at 5 pips on Short
+           if short_entry == True & (current_price - short_entry_price <= 0 - (TP)):
+               current_equity += 0 - current_price - short_entry_price * 10000  # for backtesting purposes only
+               short_entry = False
+        
+               # send exit signal to mt5
 
 
 current_price = df.loc[tbar_count, 'Ask_Price']  # find out proper price method
