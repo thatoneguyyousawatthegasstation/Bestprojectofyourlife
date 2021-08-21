@@ -287,3 +287,6 @@ for tbar_count in range(len(df)):
         enter_trade(long, 5, 1, 20)
 
 
+#Evil error:
+# KeyError: "None of [Float64Index([               nan,                nan,                nan,\n                        1.171995,              1.172,              1.172,\n                        1.172005, 1.1720074999999999, 1.1720074999999999,\n                        1.172005,\n              ...\n                         1.17031,          1.1703025,          1.1702975,\n              1.1702949999999999,             1.1703,          1.1702925,\n                         1.17029, 1.1702875000000001,           1.170285,\n                         1.17029],\n             dtype='float64', length=234904)] are in the [index]"
+#sadness.
