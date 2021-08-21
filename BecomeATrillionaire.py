@@ -275,11 +275,12 @@ def vcross(variable1_column, direction, variable2_column, vdataframe, width):
                     previous_cross = 'short'
                     return True
 
+            if direction == "==" & ops[direction](variable1, variable2):
+               return True
 #////////////////////////////////////////////////////////////////////
-
-if direction == "==" & ops[direction](variable1, variable2):
-    return True
-
+ 
+    
+#somehow get it all to work together
 for tbar_count in range(len(df)):
     trade_manager(5, 20)
     if vcross(MA1, ">", MA2, df, 1):
