@@ -282,7 +282,6 @@ def vcross(variable1_column, direction, variable2_column, vdataframe, width):
     
 #somehow get it all to work together
 for tbar_count in range(len(df)):
-    trade_manager(5, 20)
     if vcross(MA1, ">", MA2, df, 1):
         enter_trade(long, 5, 1, 20)
 
